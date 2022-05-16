@@ -2,7 +2,7 @@
 FROM nginx
 # COPY vai copiar a minha imagem /index.html e colar nesse arquivo destino /usr/share/nginx/html
 COPY ./index.html /usr/share/nginx/html
-# EXPOSE em qual porta o arquivo vai rodar
+# EXPOSE em qual porta o arquivo vai rodar. Expor" as portas de nossos contêineres para acessá-los de fora
 EXPOSE 3000
 # Setar variáveis chave=valor, tipo uma const que vai dar valor a uma variável
 ENV API_URL=http://localhost:8000/api/ 
