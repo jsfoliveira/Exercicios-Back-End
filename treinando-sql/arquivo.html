@@ -1,0 +1,21 @@
+// EXERCICIO DO YOUTUBE
+Cria uma pasta
+CREATE DATABASE biblioteca;
+
+Entre na pasta
+USE biblioteca;
+
+Crie a tabela, if not exists quer dizer que vai criar se não existir uma igual
+as colunas vão seguir essa ordem:
+nome_da_coluna tipo(se é data ou string com limite de 50 caracteres ou decimal...) Constraints(se é primary key ou not null...)
+CREATE TABLE IF NOT EXISTS musculacao (
+id_livro smallint AUTO_INCREMENT PRIMARY KEY,
+nome_livro varchar(50) NOT NULL,
+preco_livro date NOT NULL,
+data_publicacao decimal NOT NULL
+);
+
+Apresentar a tabela
+SHOW TABLES;
+
+// EXERCICIO DO COURSE DA TRYBE
