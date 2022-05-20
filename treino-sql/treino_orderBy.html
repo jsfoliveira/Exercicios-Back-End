@@ -1,0 +1,8 @@
+-- ORDER BY ordena os dados. Pode ser ascendente ou descendente.
+-- se não botar nada, ele vai ordenar ascendente.
+-- ordenar todos os dados da coluna address da tabela address de forma ascendente
+SELECT * FROM sakila.address ORDER BY address;
+-- ordenar todos os dados da coluna address da tabela address de forma descendente
+SELECT * FROM sakila.address ORDER BY address DESC;
+-- ordenar todos os dados da coluna address(descendente) e district(ascendente) da tabela address
+SELECT * FROM sakila.address ORDER BY address DESC, district;
