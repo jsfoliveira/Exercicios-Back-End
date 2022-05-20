@@ -1,0 +1,21 @@
+-- Cout para contagem
+-- quantos dados tem na tabela actor
+SELECT COUNT(*) FROM sakila.actor;
+-- quantos dados tem na coluna first_name da tabela actor
+SELECT COUNT(first_name) FROM sakila.actor;
+-- quantos dados tem na coluna first_name que não seja repetido da tabela actor
+SELECT COUNT(DISTINCT first_name) FROM sakila.actor;
+-- quantos distritos da tabela address tem o nome Alberta. where = ONDE.
+SELECT COUNT(district) FROM sakila.address WHERE district = 'Alberta';
+-- Quantas senhas temos cadastradas nessa tabela?
+SELECT COUNT(password) FROM sakila.staff;
+-- Quantas pessoas temos no total trabalhando para nossa empresa?
+SELECT COUNT(*) FROM sakila.staff;
+-- Quantos emails temos cadastrados nessa tabela?
+SELECT COUNT(email) FROM sakila.staff;
+-- quantas linhas existem na tabela rental.
+SELECT COUNT(*) FROM sakila.rental;
+-- quantas linhas existem na tabela rental, com a busca limitada a 10 linhas
+SELECT * FROM sakila.rental LIMIT 10;
+-- pula 3 linhas da tabela e depois conta 10
+SELECT * FROM sakila.rental LIMIT 10 OFFSET 3;
