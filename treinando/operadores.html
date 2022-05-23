@@ -1,0 +1,3 @@
+-- SEQUÊNCIA DE PRECEDÊNCIA DE OPERADORES: parênteses -> multi, div -> subt, adiç -> not -> and -> or
+-- Nesse exemplo, começará a fazer a operação amount = 2.99 AND staff_id=2, só depois fará o OR.
+SELECT * FROM sakila.payment WHERE amount = 0.99 OR amount = 2.99 AND staff_id = 2;

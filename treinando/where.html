@@ -1,0 +1,11 @@
+-- selecionar na coluna las_name quem tem o sobrenome Davis
+SELECT * FROM sakila.actor WHERE last_name = 'Davis';
+-- IS compara valores booleanos (true, false, null)-- 
+-- selecionar os filmes que não foram devolvidos para a locadora(return_date = null)
+SELECT * FROM sakila.rental WHERE return_date IS NULL;
+-- valores vazios são diferentes de valores nulos(nulo fica null e vazio não aparece nada)
+-- selecionar address2 vazios
+SELECT * FROM sakila.address WHERE address2 IS NOT NULL;
+-- selecionar title que não comece com a palavra academy
+SELECT * FROM sakila.film WHERE title NOT LIKE 'academy%';
+
