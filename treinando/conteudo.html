@@ -1,0 +1,33 @@
+-- Backticks ou crase (``): são usadas para identificar nome de tabelas e colunas. São necessárias apenas quando o identificador for uma palavra reservada do MySQL, ou quando o nome da tabela ou coluna contiver espaços em branco.
+-- a crase pode usar ou não, usada para distinguir palavra reservada de caractere comum
+-- PERGUNTA: O BACKTICKS não deve ser usado sempre em palavras reservadas, só quando houver ambiguidade de uma string e uma palavra reservada?
+-- Aspas simples (''): devem ser usadas em valores do tipo string. Aspas simples são aceitas na maioria dos Sistemas de Gerenciamento de Banco de Dados, sendo assim, é preferível usar aspas simples no lugar das aspas duplas.
+
+-- sintaxe para inserir dados em uma tabela
+INSERT INTO nome_da_tabela (coluna1, coluna2)
+VALUES ('valor_coluna1', 'valor_coluna2'), ('valor_3','valor_4');
+
+-- Quando for importar uma quantidade grande de dados, pode ser preferível, em alguns cenários, que você simplesmente ignore os erros e pule os dados problemáticos, que, normalmente, interromperiam a query em função de alguma restrição imposta na tabela. Ex: duplicidade de primary keys.
+INSERT IGNORE INTO pessoas (id, name) VALUES
+(4,'Gloria'), -- Sem o IGNORE, essa linha geraria um erro e o INSERT não continuaria.
+(5,'Amanda');
+
+-- auto_increment
+-- estou criando uma tabela Persons e as colunas
+CREATE TABLE Persons (
+    Personid int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+);
+-- preciso antes de incrementar, falar o valor inicial da coluna Persons
+ALTER TABLE Persons AUTO_INCREMENT=100;
+-- adicionei valores de uma linha para as colunas FirstName e LastName. Será criada essa linha com Persons = 100
+INSERT INTO Persons (FirstName,LastName)
+VALUES ('Lars','Monsen');
+-- adicionei valores de outra linha para as colunas FirstName e LastName. Será criada essa linha com Persons = 101, pois o padrão é incrementar + 1.
+INSERT INTO Persons (FirstName,LastName)
+VALUES ('Rafael','Oliveira');
+-- PERGUNTA: Para fazer o auto increment iniciando com 100 e somando 1, eu faço assim AUTO_INCREMENT=100.
+-- E para iniciar com 100 e somar 5, eu faço como?
