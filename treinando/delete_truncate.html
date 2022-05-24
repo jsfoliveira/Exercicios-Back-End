@@ -1,0 +1,44 @@
+-- DELETE: Excluindo dados de uma tabela
+DELETE FROM banco_de_dados.tabela
+WHERE coluna = 'valor';
+-- O WHERE é opcional. Porém, sem ele, todas as linhas da tabela seriam excluídas.
+DELETE FROM sakila.film_text
+WHERE title = 'ACADEMY DINOSAUR';
+-- as vezes não conseguirá deletar pq é uma chave estrangeira
+
+-- TRUNCATE: é mais rápido que o DELETE.
+-- A função principal e única do TRUNCATE é de limpar (excluir todos os registros) de uma tabela, não sendo possível especificar o WHERE. Por isso, o TRUNCATE só pode ser usado nesse cenário.
+TRUNCATE banco_de_dados.tabela;
+
+-- Exclua do banco de dados o ator com o nome de "KARL". Como Karl está em uma chave estrangeira, precisa descobrir seu id e excluir
+SELECT actor_id    -- Primeiro descubra os IDs relacionados ao nome
+FROM sakila.actor
+WHERE first_name = 'KARL';
+DELETE FROM sakila.film_actor  -- Em seguida, apague suas referências
+WHERE actor_id = 12;
+DELETE FROM sakila.actor   -- Depois exclua o item original
+WHERE first_name = 'KARL';
+
+-- Exclua do banco de dados os atores com o nome de "MATTHEW".
+SELECT actor_id    -- Primeiro descubra os IDs relacionados ao nome
+FROM sakila.actor
+WHERE first_name = 'MATTHEW';
+DELETE FROM sakila.film_actor  -- Em seguida, apague suas referências
+WHERE actor_id IN (8, 103, 181);
+DELETE FROM sakila.actor   -- Depois exclua o item original
+WHERE first_name = 'MATTHEW';;
+
+-- Exclua da tabela film_text todos os registros que possuem a palavra "saga" em suas descrições.
+DELETE FROM sakila.film
+WHERE description LIKE '%saga%'
+
+-- Apague da maneira mais performática possível todos os registros das tabelas film_actor e film_category.
+TRUNCATE sakila.film_actor;
+TRUNCATE sakila.film_category;
+-- Inspecione todas as tabelas do banco de dados sakila e analise quais restrições ON DELETE foram impostas em cada uma. Use o Table Inspector para fazer isso (aba DDL).
+Basta inspecionar e analisar uma a uma.
+-- Exclua o banco de dados e o recrie (use as instruções no início desta aula).
+TRUNCATE sakila;
+Para excluir:
+Selecione o banco sakila na lista de bancos de dados com o botão direito e clique em "Drop Schema".
+Selecione "Drop Now".
