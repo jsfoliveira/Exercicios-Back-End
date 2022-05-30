@@ -1,0 +1,31 @@
+-- Utilizando as funções de agregação: AVG, MIN, MAX, SUM e COUNT
+
+-- Média entre todos registros
+SELECT AVG(replacement_cost) FROM sakila.film; -- 19.984000
+
+-- Menor valor encontrado
+SELECT MIN(replacement_cost) FROM sakila.film; -- 9.99
+
+-- Maior valor encontrado
+SELECT MAX(replacement_cost) FROM sakila.film; -- 29.99
+
+-- Soma de todos registros
+SELECT SUM(replacement_cost) FROM sakila.film; -- 19984.00
+
+-- Quantidade
+SELECT COUNT(replacement_cost) FROM sakila.film; -- 1000 registros encontrados
+
+-- Exiba a média de duração dos filmes e dê o nome da coluna de 'Média de Duração';
+SELECT AVG (rental_duration) AS 'Média de Duração' FROM sakila.film;
+
+-- Exiba a  duração mínima dos filmes como 'Duração Mínima';
+SELECT MIN(rental_duration) AS 'Duração Mínima' FROM sakila.film;
+
+-- Exiba a  duração máxima dos filmes como 'Duração Máxima';
+SELECT MAX(rental_duration) AS 'Duração Máxima' FROM sakila.film;
+
+-- Exiba a  soma de todas as durações como 'Tempo de Exibição Total';
+SELECT SUM(rental_duration) AS 'Tempo de Exibição Total' FROM sakila.film;
+
+-- Exiba  a quantidade total de filmes cadastrados na tabela sakila.film como 'Filmes Registrados'.
+SELECT COUNT(*) AS 'Filmes Registrados' FROM sakila.film;
