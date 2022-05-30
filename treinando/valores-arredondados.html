@@ -1,0 +1,21 @@
+-- Arredondando valores
+
+-- ROUND arredonda os números de acordo com sua parte decimal.
+-- Se for maior ou igual a 0.5, o resultado é um arredondamento para cima.
+-- Caso contrário, ocorre um arredondamento para baixo
+-- Podemos omitir ou especificar quantas casas decimais queremos
+SELECT ROUND(10.4925); -- 10
+SELECT ROUND(10.5136); -- 11
+SELECT ROUND(-10.5136); -- -11
+SELECT ROUND(10.4925, 2); -- 10.49
+SELECT ROUND(10.4925, 3); -- 10.493
+
+-- CEIL sempre faz arredondamento pra cima
+SELECT CEIL(10.51); -- 11
+SELECT CEIL(10.49); -- 11
+SELECT CEIL(10.2); -- 11
+
+-- FLOOR sempre faz arredondamento pra baixo
+SELECT FLOOR(10.51); -- 10
+SELECT FLOOR(10.49); -- 10
+SELECT FLOOR(10.2); -- 10
