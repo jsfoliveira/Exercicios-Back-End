@@ -22,12 +22,15 @@ SELECT RIGHT('Oi, eu sou uma string', 6);
 -- Exibe quantos caracteres tem a string, espaço conta
 SELECT CHAR_LENGTH('Oi, eu sou uma string');
 
--- Extrai parte de uma string de acordo com o índice de um caractere 
--- A PARTIR DO CARACTERE 5, TIRE 3 E EXIBA
-SELECT SUBSTRING('Oi, eu sou uma string', 5, 3);
+-- Extrai parte de uma string de acordo com o índice de um caractere. O primeiro número pode ser negativo, vai contar voltando, o segundo que não pode ser negativo
+-- A PARTIR DO CARACTERE 5 (contando da esquerda pra direita), TIRE 3  CARACTERES E EXIBA
+SELECT SUBSTRING('Oi, eu sou uma string', 5, 3);  -- eu
+
+-- A PARTIR DO CARACTERE 5 (contando da direita pra esquerda), TIRE 3  CARACTERES E EXIBA
+SELECT SUBSTRING('Oi, eu sou uma string', -5, 3); -- tri
 
 -- Se a quantidade de caracteres a extrair não for definida,
--- então a string será extraída do índice inicial definido, até o seu final
+-- então a string será extraída do índice inicial definido, até o seu final. Pode ter um 3º parâmetro, porém não pode ser negatuvo
 SELECT SUBSTRING('Oi, eu sou uma string', 5);
 
 -- Faça uma query que exiba a palavra 'trybe' em CAIXA ALTA.
