@@ -1,0 +1,50 @@
+-- LEFT JOIN ou RIGHT JOIN
+-- LEFT JOIN: quando utilizamos o LEFT JOIN, focamos a tabela da esquerda. São retornados todos os registros da tabela da esquerda e valores correspondentes da tabela da direita, caso existam.
+-- Valores que não possuem correspondentes são exibidos como nulos.
+-- Ou seja, left join vai se basear com a coluna do lado esquerda(que estará completa), a coluna da direita ficará com null se a célula não tiver conteúdo
+
+-- RIGHT JOIN: O mesmo conceito é usado do left join.
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    a.actor_id,
+    a.first_name,
+    a.last_name
+FROM sakila.customer AS c
+LEFT JOIN sakila.actor AS a
+ON c.last_name = a.last_name
+ORDER BY c.last_name;
+
+-- INNER JOIN: é a intercessão da direita e esquerda(o que tem em comum)
+
+-- SELF JOIN: não é um tipo diferente de JOIN. Usado pção sempre que a informação que você precisa filtrar ou comparar para encontrar algo estiver em uma única tabela.
+SELECT
+    CONCAT(Employee.FIRST_NAME, " ", Employee.LAST_NAME) AS "Nome da Pessoa Colaboradora",
+    CONCAT(Manager.FIRST_NAME, " ", Manager.LAST_NAME) AS "Nome Gerente"
+FROM
+	employees AS Employee
+INNER JOIN
+	employees AS Manager ON Employee.MANAGER_ID = Manager.EMPLOYEE_ID;
+
+-- Queremos saber o Nome das pessoas colaboradoras e suas respectivas gerências (manager) cujos departamentos (department) são diferentes.
+SELECT
+    CONCAT(Employee.FIRST_NAME, " ", Employee.LAST_NAME) AS "Nome Pessoa Colaboradora",
+    CONCAT(Manager.FIRST_NAME, " ", Manager.LAST_NAME) AS "Nome Gerente"
+FROM
+	hr.employees AS Employee
+INNER JOIN
+	hr.employees AS Manager ON Employee.MANAGER_ID = Manager.EMPLOYEE_ID
+WHERE
+	Employee.DEPARTMENT_ID <> Manager.DEPARTMENT_ID;
+
+-- Exiba o Nome e a quantidade de pessoas lideradas de cada pessoa gerente.
+SELECT
+    CONCAT(Manager.FIRST_NAME, " ", Manager.LAST_NAME) AS "Nome Gerente",
+    COUNT(*)
+FROM
+	hr.employees AS Manager
+INNER JOIN
+	hr.employees AS Employee ON Employee.MANAGER_ID = Manager.EMPLOYEE_ID
+GROUP BY
+	Manager.EMPLOYEE_ID;
