@@ -1,0 +1,27 @@
+-- Filtrando Resultados do GROUP BY com HAVING (tendo)
+-- O HAVING acontece por último na execução da consulta, de modo que primeiro são calculados os agrupamentos, e apenas depois disso são filtrados os que não satisfazem as condições da cláusula HAVING
+-- no AS sempre dê um nome com underline (nomes_cadastrados), e não nomes separados com espaço(nomes cadastrados)
+
+-- having pode ser usado da mesma forma que o WHERE(conte quando tiver pelo menos dois nomes iguais)
+SELECT first_name, COUNT(*) AS nomes_cadastrados
+FROM sakila.actor
+GROUP BY first_name
+HAVING nomes_cadastrados > 2;
+
+-- Usando a query a seguir, modifique-a de forma que exiba apenas as durações médias que estão entre 115.0 a 121.50.
+-- Além disso, dê um alias (apelido) à coluna gerada por AVG(length), de forma que deixe a query mais legível.
+-- Finalize ordenando os resultados de forma decrescente.
+SELECT rating, AVG(length) AS alias
+FROM sakila.film
+GROUP BY rating
+HAVING alias BETWEEN 115.0 AND 121.50
+ORDER BY alias DESC;
+
+-- Usando a query a seguir, exiba apenas os valores de total do custo de substituição que estão acima de $3950.50.
+-- Dê um alias que faça sentido para SUM(replacement_cost), de forma que deixe a query mais legível.
+-- Finalize ordenando os resultados de forma crescente.
+SELECT rating, SUM(replacement_cost) AS nome
+FROM sakila.film
+GROUP BY rating
+HAVING nome > 3950.50
+ORDER BY nome DESC;
