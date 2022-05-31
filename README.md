@@ -11,3 +11,8 @@ Bloco 20 - dia 01: Introdução - Bancos de dados relacionais e SQL<br>
 Bloco 20 - dia 02: Encontrando dados em um banco de dados<br>
 Bloco 20 - dia 03: Filtrando dados de forma específica<br>
 Bloco 20 - dia 04: Manipulando tabelas<br>
+
+Bloco 21 - dia 01: Funções mais usadas no SQL<br>
+Bloco 21 - dia 02: Descomplicando JOINs<br>
+Bloco 21 - dia 03: Transformando ideias em um modelo de banco de dados<br>
+
