@@ -1,0 +1,19 @@
+DROP SCHEMA IF EXISTS Brasil;   -- se tiver algum banco com o nome Brasil, ele vai excluir, opicional
+CREATE DATABASE IF NOT EXISTS Brasil  -- cria o banco e verifica se não tem nenhum com esse nome
+USE Brasil;  -- entra no banco
+
+-- boa prática criar tabela no plural
+
+-- nem toda coluna precisa de ter uma constraint(PRIMARY KEY...)
+CREATE TABLE nome_tabela (
+  nome_coluna tipo_de_dado constraint
+  nome_coluna tipo_de_dado
+) ENGINE = InnoDB           -- mecanismo como banco de dados vai se comportar. inoodb é o mais usado, o padrão
+
+-- exemplo
+CREATE TABLE album (
+  album_id INT PRIMARY KEY AUTO_INCREMENT,
+  artist_id INT NOT NULL,
+  titulo VARCHAR(100) NOT NULL,
+  FOREIGN KEY (artist_id)  REFERENCES artista(artista)          // FOREIGN (coluna-dessa-tabela) REFERENCES nome-da-tabela(coluna-da-outra-tabela) pra fazer essa referência, tem que existir a outra tabela.
+) ENGINE = InnoDB  
