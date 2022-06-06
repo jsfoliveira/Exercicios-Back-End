@@ -16,3 +16,9 @@ Bloco 21 - dia 01: Funções mais usadas no SQL<br>
 Bloco 21 - dia 02: Descomplicando JOINs<br>
 Bloco 21 - dia 03: Transformando ideias em um modelo de banco de dados<br>
 
+Bloco 22 - dia 01: Introdução - Node.js<br>
+Bloco 22 - dia 02: Node.js - Um motor JavaScript<br>
+Bloco 22 - dia 03: Node.js - Fluxo Assíncrono<br
+Bloco 22 - dia 04: Mocha, Chai e Sinon - Testes de Back-end com Node.js<br>
+Bloco 22 - dia 05: Express - HTTP com Node.js<br>
+Bloco 22 - dia 06: Express - Middlewares<br>
