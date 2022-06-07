@@ -1,0 +1,18 @@
+Node é o interpretador do JS. Ele não possui suporte a módulos ES6 por padrão, sendo necessário o uso de transpiladores para que esse recurso esteja disponível, como o Babel, ou supersets da linguagem, como o TypeScript.
+
+Módulos são "caixinhas" que isolam suas funções, variáveis e afins de outras partes do código; eles podem ser internos (que vêm com o Node.js), locais (criados por nós na nossa máquina) ou de terceiros (baixados do NPM).
+O NPM é o site em que publicamos nossos pacotes e npm é a ferramenta de linha de comando que realiza o gerenciamento desses pacotes pra nós.
+
+O CommonJS é o sistema de módulos implementado pelo Node.js nativamente.
+
+Para exportar algo no sistema CommonJS, utilizamos a variável global module.exports, atribuindo a ela o valor que desejamos exportar. E para receber a função, usa require. Exemplo nos arquivos brlValue.js e index.js:
+// brlValue.js
+const brl = 5.37;
+const usdToBrl = (valueInUsd) => valueInUsd * brl;
+module.exports = usdToBrl;
+// index.js
+const convert = require('./brlValue');
+const usd = 10;
+const brl = convert(usd);
+console.log(brl) // 53.7
+

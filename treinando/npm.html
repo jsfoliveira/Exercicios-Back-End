@@ -1,0 +1,14 @@
+Módulo de terceiros
+Quando importamos um módulo que não é nativo do Node.js e que não aponta para um arquivo local, o Node inicia uma busca por esse módulo. Essa busca acontece na pasta node_modules.
+NPM é  o repositório oficial para publicação de pacotes Node.js.
+
+cria os valores default do packjson
+$npm init -y
+
+Para criar um script, precisamos alterar o package.json e adicionar uma nova chave ao objeto scripts. O valor dessa chave deve ser o comando que desejamos que seja executado quando chamarmos aquele script.
+{
+  "scripts": {
+    "lint": "eslint ."
+  }
+}
+$npm run lint
