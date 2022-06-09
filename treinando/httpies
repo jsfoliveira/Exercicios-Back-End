@@ -1,0 +1,3 @@
+# Existe uma terceira possibilidade: usar um comando chamado httpie que permite fazer uma requisição direto pelo terminal. Para instalar esse comando siga as instruções da documentação.
+# Uma vez instalado, execute o comando abaixo:
+$http :3001/recipes
