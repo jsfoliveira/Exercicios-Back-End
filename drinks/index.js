@@ -3,6 +3,13 @@ const cors = require('cors');
 const app = express(); 
 app.use(express.json());
 app.use(cors());  
+
+const recipes = [
+  { id: 1, name: 'Pizza', price: 40.0, waitTime: 30 },
+  { id: 2, name: 'Macarrão a Bolonhesa', price: 35.0, waitTime: 25 },
+  { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
+];
+
 const drinks = [
 	{ id: 1, name: 'Refrigerante Lata', price: 5.0 },
 	{ id: 2, name: 'Refrigerante 600ml', price: 8.0 },
@@ -13,6 +20,10 @@ const drinks = [
 ];
 app.get('/drinks', function(req, res) {
   res.json(drinks);
+}); 
+
+app.get('/recipes', function(req, res) {
+  res.json(recipes);
 }); 
 
 // get retorna algo
@@ -30,6 +41,14 @@ app.get('/drinks/:id', function (req, res) {
   const { id } = req.params;
   const drink = drinks.find((r) => r.id === Number(id));
   res.json(drink);
+});
+
+// quando fizer essa busca no navegador, vai aparecer as receitas que tem name macarrão e o preço máximo: http://localhost:3002/recipes/search?name=Macarrão&maxPrice=40
+// EU DEFINO O QUE QUERO FILTRAR NO LOCALHOST
+app.get('/recipes/search', function (req, res) {
+  const { name, maxPrice } = req.query;
+  const filteredRecipes = recipes.filter((r) => r.name.includes(name) && r.price < Number(maxPrice));
+  res.status(200).json(filteredRecipes);
 });
 
 
