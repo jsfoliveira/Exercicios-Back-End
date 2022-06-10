@@ -1,0 +1,2 @@
+// Middlewares também podem modificar o objeto req, e essas modificações serão recebidas pelos próximos middlewares caso next seja chamado.
+// utilizamos isso para propagar informações de um middleware para o outro.
