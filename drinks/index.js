@@ -1,6 +1,13 @@
+// pra usar o bodyParser, deve o importar
+const bodyParser = require('body-parser');
+
 const express = require('express');
+
 const cors = require('cors');
+
 const app = express(); 
+// para conseguir usar o código criado, precisa pegar os dados que chegaram na requisição transformar em json, então usa o bodyParser.
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());  
 
@@ -40,18 +47,19 @@ app.get('/teste', function(req, res) {
 // NÃO CONSEGUI ENTENDER COMO FUNCIONA O POST
 // REQUISIÇÃO DO POST
 // $http POST :3001/recipes id:=4 name='Macarrão com Frango' price:=30
-// app.post('/recipes', function (req, res) {
-//   const { id, name, price } = req.body;
-//   recipes.push({ id, name, price});
-//   res.status(201).json({ message: 'Recipe created successfully!'});
-// });
+app.post('/recipes', function (req, res) {
+  const { id, name, price, waitTime } = req.body; //req.body encapsula todos os dados enviados para o cliente.
+  recipes.push({ id: 4, name: 'melancia', price:20.0, waitTime: 32});
+  res.send(`Linguagem ${name} adicionada com sucesso!`);  // vai aparecer a frase se escrevermos assim: $http POST :3002/recipes name=melancia
+});
 
 // quero adicionar outra receita. faço $http POST : 3002/recipes
 // depois vejo se adicionou: $http GET : 3002/recipes
-app.post('/recipes', function (req, res) {
-  recipes.push(  { id: 4, name: 'Abobora', price: 42.0, waitTime: 32 });
-  res.send('Abóbora adiciona com sucesso!');
-});
+// com post eu altero o código, porém volta ao código anterior depois que a requisição é iniciada.
+// app.post('/recipes', function (req, res) {
+//   recipes.push(  { id: 4, name: 'Abobora', price: 42.0, waitTime: 32 });
+//   res.send('Abóbora adiciona com sucesso!');
+// });
 
 app.get('/drinks/:id', function (req, res) {
   const { id } = req.params;
