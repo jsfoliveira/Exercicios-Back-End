@@ -37,6 +37,22 @@ app.get('/teste', function(req, res) {
 //   res.json({ok:true})
 // })
 
+// NÃO CONSEGUI ENTENDER COMO FUNCIONA O POST
+// REQUISIÇÃO DO POST
+// $http POST :3001/recipes id:=4 name='Macarrão com Frango' price:=30
+// app.post('/recipes', function (req, res) {
+//   const { id, name, price } = req.body;
+//   recipes.push({ id, name, price});
+//   res.status(201).json({ message: 'Recipe created successfully!'});
+// });
+
+// quero adicionar outra receita. faço $http POST : 3002/recipes
+// depois vejo se adicionou: $http GET : 3002/recipes
+app.post('/recipes', function (req, res) {
+  recipes.push(  { id: 4, name: 'Abobora', price: 42.0, waitTime: 32 });
+  res.send('Abóbora adiciona com sucesso!');
+});
+
 app.get('/drinks/:id', function (req, res) {
   const { id } = req.params;
   const drink = drinks.find((r) => r.id === Number(id));
