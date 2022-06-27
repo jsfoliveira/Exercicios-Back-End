@@ -19,7 +19,17 @@ app.get('/book', async (req, res) => {
   const book = await Book.getAll();
 
   res.status(200).json(book);
-})
+});
+
+app.get('/book/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const book = await Book.findById(id);
+
+  if (!book) return res.status(404).json({ message: 'Book not found' });
+
+  res.status(200).json(book);
+});
 
 app.listen(PORT, () => {
 	console.log(`Ouvindo a porta ${PORT}`);

@@ -7,17 +7,37 @@ const connection = require('./connection');
 //         return book;
 //   };
 
+
+
   const getAll = async () => {
+    const query = 'SELECT id, title, author_id FROM model_example.books;'
     const [book] = await connection.execute(
-    'SELECT id, title, author_id FROM model_example.books;'
+    query,
     );
-          return book.map(({ id, title, author_id}) => ({
-            id,
-            title,
-            author_id:author_id,
-          }));
+    return book.map(({ id, title, author_id }) => ({
+      id,
+      title,
+      authorId: author_id,
+    }));
     };
+
+    const findById = async (id) => {
+      const query = 'SELECT id, title, author_id FROM model_example.books WHERE id=?';
+    const [book] = await connection.execute(
+    query, [id]);
+// se passar um id que não existe, vai ser um array vazio, vai retornar null
+    if (book.length === 0){
+      return null;
+    }
+
+    return book.map(({ id, title, author_id }) => ({
+      id,
+      title,
+      authorId: author_id,
+    }))[0];
+    }
   
 module.exports = {
 getAll,
+findById,
  }; 
