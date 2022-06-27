@@ -11,14 +11,14 @@ const express = require('express');
 
 const app = express();
 
-const PORT =3002;
+const PORT =3000;
 
-const Book = require('./models/Book');
+const Author = require('./models/Author');
 
-app.get('/book', async (req, res) => {
-  const book = await Book.getAll();
+app.get('/authors', async (req, res) => {
+  const authors = await Author.getAll();
 
-  res.status(200).json(book);
+  res.status(200).json(authors);
 })
 
 app.listen(PORT, () => {
