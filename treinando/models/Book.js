@@ -9,7 +9,7 @@ const connection = require('./connection');
 
 
 
-  const getAll = async () => {
+  const getAll = async ({authorId}) => {
     const query = 'SELECT id, title, author_id FROM model_example.books;'
     const [book] = await connection.execute(
     query,
@@ -28,13 +28,14 @@ const connection = require('./connection');
 // se passar um id que não existe, vai ser um array vazio, vai retornar null
     if (book.length === 0){
       return null;
+    } else {
+      return book.map(({ id, title, author_id }) => ({
+        id,
+        title,
+        authorId: author_id,
+      }))[0];
     }
 
-    return book.map(({ id, title, author_id }) => ({
-      id,
-      title,
-      authorId: author_id,
-    }))[0];
     }
   
 module.exports = {
