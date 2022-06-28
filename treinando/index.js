@@ -7,9 +7,12 @@
 // npm i nodemon -D
 // index.js
 
+const bodyParser = require('body-parser');
 const express = require('express');
 
 const app = express();
+
+app.use(bodyParser.json());
 
 const PORT =3002;
 
@@ -29,8 +32,18 @@ app.get('/book/:id', async (req, res) => {
   } else {
     res.status(200).json(book);
   }
-
 });
+
+app.post('/books', async(req, res) => {
+  const { title, author_id } = req.body;
+
+  if (!Book.isValid(title, author_id)) {
+    return res.status(400).json({ messsage: 'Dados inválidos '});
+  }
+
+  await Book.create(title, author_id);
+  res.status(201).json({ message: 'Autor criado com sucesso!'});
+})
 
 app.listen(PORT, () => {
 	console.log(`Ouvindo a porta ${PORT}`);
