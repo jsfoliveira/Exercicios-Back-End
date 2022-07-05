@@ -22,3 +22,15 @@ Bloco 22 - dia 03: Node.js - Fluxo Assíncrono<br>
 Bloco 22 - dia 04: Mocha, Chai e Sinon - Testes de Back-end com Node.js<br>
 Bloco 22 - dia 05: Express - HTTP com Node.js<br>
 Bloco 22 - dia 06: Express - Middlewares<br>
+
+Bloco 23 - dia 01: Introdução - Arquitetura de Software<br>
+Bloco 23 - dia 02: Arquitetura de Software - Camada de Model<br>
+Bloco 23 - dia 03: Arquitetura de Software - Camada de Controller e Service<br>
+Bloco 23 - dia 04: Arquitetura Web - Rest e Restful<br>
+Bloco 23 - dia 05: Arquitetura de Software - Testando as Camadas<br>
+
+Bloco 24 - dia 01: Introdução - Node.js: ORM e Autenticação<br>
+Bloco 24 - dia 02: ORM - Interface da aplicação com o banco de dados<br>
+Bloco 24 - dia 03: ORM - Associations<br>
+Bloco 24 - dia 04: JWT - (JSON Web Token)<br>
+Bloco 24 - dia 05: Testando APIs com Testes de Integração<br>
