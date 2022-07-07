@@ -1,6 +1,7 @@
 // npm init -y
 
 // npm install sequelize
+// npm install mysql2
 
 // instalar um CLI, que é responsável por gerar e executar as operações.
 // npm install sequelize-cli
@@ -60,3 +61,5 @@
 // mudar todo o conteúdo do config.js
 // Crie o arquivo .env na raiz e preencha
 // Modifique a linha 8 do arquivo models/index.js para apontar para o arquivo config.js
+
+// 
