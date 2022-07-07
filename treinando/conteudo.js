@@ -48,3 +48,15 @@
 // altera o arquivo criado no seeders
 // Para executar o seed, basta rodarmos o comando abaixo: npx sequelize db:seed:all
 // Para reverter o seed, use o seguinte comando: npx sequelize db:seed:undo:all
+
+// pra rodar, precisa modificar o pckagejson:
+//     "start": "node index.js"
+// e rodar : npm i express body-parser
+
+// variáveis de ambiente
+// servem para controlar coisas relacionadas à configuração geral da aplicação, usadas quando usamos credenciais, informações que não devem aparecer pra todos
+// para isso, devemos fazer a instalação do pacote dotenv: npm install dotenv
+// Mudaremos o nome do nosso arquivo config.json para config.js
+// mudar todo o conteúdo do config.js
+// Crie o arquivo .env na raiz e preencha
+// Modifique a linha 8 do arquivo models/index.js para apontar para o arquivo config.js
