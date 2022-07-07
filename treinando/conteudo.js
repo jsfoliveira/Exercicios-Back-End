@@ -29,3 +29,16 @@
   // Digite a sua senha de acesso ao mysql e em seguida rode o comando abaixo: show databases;
 
   // Perceba que, a partir desses passos, o banco orm_example foi criado
+
+  // Uma migration é uma forma de versionar o schema do banco de dados.
+
+  // O queryInterface é usado pela biblioteca para modificar o banco de dados, seguindo o "dialeto" do banco que estamos utilizando. O objeto Sequelize armazena os tipos de dados disponíveis no contexto do banco, por exemplo varchar, string, integer, date etc.
+
+  // executar o migrate: npx sequelize db:migrate
+  // reverter o migrate: npx sequelize db:migrate:undo
+
+  // forma correta de adicionar uma nova coluna em uma tabela já existente é criando uma nova migration que permita alterar a tabela
+  // npx sequelize migration:generate --name add-column-phone-table-users
+  // modifica a função no migration
+  // rodamos o comando abaixo para executar a nossa nova migration: npx sequelize db:migrate
+  // vain o user.js e insere a informação da coluna criada
