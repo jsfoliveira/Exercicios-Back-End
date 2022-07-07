@@ -41,4 +41,10 @@
   // npx sequelize migration:generate --name add-column-phone-table-users
   // modifica a função no migration
   // rodamos o comando abaixo para executar a nossa nova migration: npx sequelize db:migrate
-  // vain o user.js e insere a informação da coluna criada
+  // vai no user.js e insere a informação da coluna criada
+
+  // toda vez que executamos as migrations, nosso banco de dados é criado do zero, ou seja, sem dados dentro das tabelas. Os seeders existem pra resolver problemas como esse!podemos configurar nosso banco para ser automaticamente criado e povoado!
+// vamos precisar executar a criação de um novo seed pelo CLI: npx sequelize seed:generate --name users
+// altera o arquivo criado no seeders
+// Para executar o seed, basta rodarmos o comando abaixo: npx sequelize db:seed:all
+// Para reverter o seed, use o seguinte comando: npx sequelize db:seed:undo:all
