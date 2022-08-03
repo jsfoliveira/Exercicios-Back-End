@@ -34,3 +34,11 @@ Bloco 24 - dia 02: ORM - Interface da aplicação com o banco de dados<br>
 Bloco 24 - dia 03: ORM - Associations<br>
 Bloco 24 - dia 04: JWT - (JSON Web Token)<br>
 Bloco 24 - dia 05: Testando APIs com Testes de Integração<br>
+
+Bloco 25 - dia 01: Introdução - Deploy<br>
+Bloco 25 - dia 02: Infraestrutura - Deploy com Heroku<br>
+Bloco 25 - dia 03: Deploy Docker & Heroku<br>
+
+Bloco 26 - dia 01: Introdução - TypeScript<br>
+Bloco 26 - dia 02: Tipagem Estática e Generics<br>
+Bloco 26 - dia 03: Express com TypeScript<br>
